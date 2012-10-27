@@ -8,7 +8,7 @@ function fun(){
 	if (w.closed){
 		console.log('fun call pre');
 		deferred.resolve(url);
-			console.log('fun call post');
+		console.log('fun call post, result:' + url);
 		return;
 	}
 	console.log('fun fun');
@@ -24,7 +24,7 @@ function createPicker(text) {
 
 	url = '';
 	picked = false;
-    w = window.parent.open('picker.html','color_popup','width=610,height=550,scrollbars=0');
+    w = window.open('picker.html','color_popup','width=610,height=550,scrollbars=0');
     
  	w.focus();
  	

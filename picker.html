@@ -16,6 +16,7 @@
     function createPicker() {
         var picker = new google.picker.PickerBuilder().
             addView(google.picker.ViewId.IMAGE_SEARCH).
+            addView(google.picker.ViewId.VIDEO_SEARCH).
             setCallback(pickerCallback).
             build();
         picker.setVisible(true);
