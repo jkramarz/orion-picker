@@ -1,39 +1,60 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html>
   <head>
-    <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
-    <title>Google Picker Example</title>
+    <meta charset='utf-8' />
+    <meta http-equiv="X-UA-Compatible" content="chrome=1" />
+    <meta name="description" content="Orion-picker : Google image embedder Eclipse Orion" />
 
-    <!-- The standard Google Loader script. -->
-    <script src="http://www.google.com/jsapi"></script>
-    <script type="text/javascript">
+    <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
 
-    // Use the Google Loader script to load the google.picker script.
-    google.setOnLoadCallback(createPicker);
-    google.load('picker', '1');
+	<script src="javascripts/plugin.js"></script>
+	<script src="http://www.google.com/jsapi"></script>
+		<script src="javascripts/Deferred.js"></script>
+	<script src="javascripts/pickerPlugin.js"></script>
 
-    // Create and render a Picker object for searching images.
-    function createPicker() {
-        var picker = new google.picker.PickerBuilder().
-            addView(google.picker.ViewId.IMAGE_SEARCH).
-            setCallback(pickerCallback).
-            build();
-        picker.setVisible(true);
-    }
-
-    // A simple callback implementation.
-    function pickerCallback(data) {
-      var url = 'nothing';
-      if (data[google.picker.Response.ACTION] == google.picker.Action.PICKED) {
-        var doc = data[google.picker.Response.DOCUMENTS][0];
-        url = doc[google.picker.Document.URL];
-      }
-      var message = 'You picked: ' + url;
-      document.getElementById('result').innerHTML = message;
-    }
-    </script>
+    <title>Orion-picker</title>
   </head>
+
   <body>
-    <div id="result"></div>
+
+    <!-- HEADER -->
+    <div id="header_wrap" class="outer">
+        <header class="inner">
+          <a id="forkme_banner" href="https://github.com/jkramarz/orion-youtube">View on GitHub</a>
+          <h1 id="project_title">Orion-picker</h1>
+          <h2 id="project_tagline">Google image embedder plugin for Eclipse Orion</h2>
+        </header>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <div id="main_content_wrap" class="outer">
+      <section id="main_content" class="inner">
+        <h1>orion-picker</h1>
+		<p>Google image embedder plugin for Eclipse Orion</p>
+		<p>
+			This is a plugin for <a href="http://wiki.eclipse.org/Orion/">Eclipse Orion</a>.
+		</p>
+		<p>
+			It adds basic editor extensions for embedding Google Image in Orion.
+			<a onclick="createPicker('test');">test</a>
+		</p>
+		<p>
+			To install this plugin, follow <a
+				href="http://wiki.eclipse.org/Orion/How_Tos/Installing_A_Plugin">these
+				instructions</a> using this URL: <a href="http://jkramarz.github.com/orion-picker/">http://jkramarz.github.com/orion-picker/</a>
+		</p>
+      </section>
+    </div>
+
+    <!-- FOOTER  -->
+    <div id="footer_wrap" class="outer">
+      <footer class="inner">
+        <p class="copyright">Orion-picker maintained by <a href="https://github.com/jkramarz">jkramarz</a></p>
+        <p>Published with <a href="http://pages.github.com">GitHub Pages</a></p>
+      </footer>
+    </div>
+
+    
+
   </body>
 </html>
