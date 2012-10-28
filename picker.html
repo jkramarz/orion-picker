@@ -17,6 +17,7 @@
         var picker = new google.picker.PickerBuilder().
             addView(google.picker.ViewId.IMAGE_SEARCH).
             addView(google.picker.ViewId.VIDEO_SEARCH).
+            /*addView(google.picker.​ViewId.WEBCAM).*/
             setCallback(pickerCallback).
             build();
         picker.setVisible(true);
@@ -31,8 +32,8 @@
         opener.url = url;
         window.close();
       }
-      var message = 'You picked: ' + url;
-      document.getElementById('result').innerHTML = message;
+      /*var message = 'You picked: ' + url;
+     document.getElementById('result').innerHTML = message;*/
 
     }
     </script>
